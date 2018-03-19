@@ -78,7 +78,7 @@ final class DataTests: XCTestCase {
 
         XCTAssertEqual(
             GeneralSQLSerializer.shared.serialize(data: select),
-            "SELECT * FROM `foo` JOIN `bar` ON `foo`.`id` = `bar`.`foo_id`"
+            "SELECT `foo`.* FROM `foo` JOIN `bar` ON `foo`.`id` = `bar`.`foo_id`"
         )
     }
 

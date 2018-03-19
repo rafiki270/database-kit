@@ -31,7 +31,7 @@ extension SQLSerializer {
             }
 
             if columns.isEmpty {
-                columns += ["*"] // ["\(table).*"]
+                columns += query.joins.isEmpty ? ["*"] : ["\(table).*"]
             } else {
                 columns += query.columns.map { serialize(column: $0) }
             }
